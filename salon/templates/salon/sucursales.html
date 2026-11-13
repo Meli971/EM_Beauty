@@ -1,0 +1,67 @@
+{% extends 'salon/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .branches {
+        padding: 40px 8%;
+        text-align: center;
+    }
+
+    .branches img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+    .branches h1 {
+        color: #a88750;
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
+    .branch-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 35px;
+    }
+
+    .branch {
+        background: white;
+        padding: 35px 20px;
+        border: 1px solid #e5dccb;
+        border-radius: 5px;
+    }
+
+    .branch h2 {
+        color: #a88750;
+        margin-bottom: 15px;
+    }
+</style>
+
+<section class="branches">
+    <img src="{% static 'salon/img/sucursales.jpg' %}" alt="Sucursales E&M">
+
+    <h1>Nuestras Sucursales</h1>
+    <p>Encuentra tu espacio E&M.</p>
+
+    <div class="branch-grid">
+        {% for sucursal in sucursales %}
+        <div class="branch">
+            <h2>{{ sucursal.nombre }}</h2>
+            <p>{{ sucursal.direccion }}</p>
+            <p>Teléfono: {{ sucursal.telefono }}</p>
+            <p>Horario: {{ sucursal.horario }}</p>
+        </div>
+        {% empty %}
+        <p>Próximamente tendremos nuevas sucursales.</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

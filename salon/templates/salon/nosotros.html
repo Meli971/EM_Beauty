@@ -1,0 +1,73 @@
+{% extends 'salon/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .about {
+        max-width: 950px;
+        margin: 50px auto;
+        padding: 40px 25px;
+        text-align: center;
+    }
+
+    .about img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+    .about h1, .about h2 {
+        color: #a88750;
+    }
+
+    .about h1 {
+        font-size: 38px;
+        margin-bottom: 25px;
+    }
+
+    .about p {
+        font-size: 17px;
+        line-height: 1.9;
+        margin-bottom: 20px;
+    }
+
+    .about h2 {
+        margin-top: 35px;
+    }
+</style>
+
+<section class="about">
+    <img src="{% static 'salon/img/nosotros.jpg' %}" alt="Interior del salón E&M">
+
+    <h1>Sobre Nosotros</h1>
+
+    <p>
+        En E&M creemos que la belleza está en los detalles.
+        Somos un espacio dedicado al cuidado personal,
+        donde combinamos estilo, calidad y atención
+        para ofrecer una experiencia especial.
+    </p>
+
+    <p>
+        Nuestro objetivo es que cada cliente se sienta
+        cómodo, seguro y satisfecho con cada servicio.
+    </p>
+
+    <h2>Nuestra misión</h2>
+    <p>
+        Brindar servicios de belleza y cuidado personal
+        con calidad, profesionalismo y dedicación.
+    </p>
+
+    <h2>Nuestra visión</h2>
+    <p>
+        Ser un salón reconocido por su atención,
+        elegancia y compromiso con nuestros clientes.
+    </p>
+</section>
+
+{% endblock %}

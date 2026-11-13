@@ -1,0 +1,66 @@
+{% extends 'salon/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .stylists {
+        padding: 40px 8%;
+        text-align: center;
+    }
+
+   .stylists img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+    .stylists h1 {
+        color: #a88750;
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
+    .stylist-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        margin-top: 35px;
+    }
+
+    .stylist {
+        background: white;
+        padding: 35px 20px;
+        border: 1px solid #e5dccb;
+        border-radius: 5px;
+    }
+
+    .stylist h2 {
+        color: #a88750;
+        margin-bottom: 12px;
+    }
+</style>
+
+<section class="stylists">
+    <img src="{% static 'salon/img/estilistas.jpg' %}" alt="Equipo de estilistas E&M">
+
+    <h1>Nuestros Estilistas</h1>
+    <p>Conoce a nuestro equipo profesional.</p>
+
+    <div class="stylist-grid">
+        {% for estilista in estilistas %}
+        <div class="stylist">
+            <h2>{{ estilista.nombre }}</h2>
+            <p>{{ estilista.especialidad }}</p>
+            <p>Teléfono: {{ estilista.telefono }}</p>
+        </div>
+        {% empty %}
+        <p>Próximamente conocerás a nuestro equipo.</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

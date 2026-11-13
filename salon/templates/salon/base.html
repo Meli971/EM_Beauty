@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E&M</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f5ef;
+            color: #292522;
+        }
+
+        header {
+            background: #171513;
+            padding: 22px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #d8bd88;
+            font-size: 30px;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d8bd88;
+        }
+
+        main {
+            min-height: 65vh;
+        }
+
+        footer {
+            background: #171513;
+            color: #d8bd88;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">E&M</div>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/nosotros/">Nosotros</a>
+            <a href="/servicios/">Servicios</a>
+            <a href="/estilistas/">Estilistas</a>
+            <a href="/productos/">Productos</a>
+            <a href="/sucursales/">Sucursales</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>E&M | Belleza, elegancia y estilo</p>
+        <p>© 2026 Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends 'salon/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .hero {
+        min-height: 65vh;
+        background:
+            linear-gradient(rgba(23, 21, 19, 0.55), rgba(23, 21, 19, 0.75)),
+            url("{% static 'salon/img/inicio.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        color: #d8bd88;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 600px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .hero a {
+        background: #d8bd88;
+        color: #171513;
+        padding: 14px 30px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+</style>
+
+<section class="hero">
+    <h1>Bienvenidos a E&M</h1>
+    <p>
+        Un espacio creado para resaltar tu belleza,
+        cuidar cada detalle y ofrecerte una experiencia
+        de elegancia, estilo y bienestar.
+    </p>
+    <a href="/servicios/">CONOCE NUESTROS SERVICIOS</a>
+</section>
+
+{% endblock %}
